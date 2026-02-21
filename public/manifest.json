@@ -1,0 +1,16 @@
+{
+  "name": "The POP Up",
+  "short_name": "The POP Up",
+  "description": "Physical Art. Onchain Ownership. By Swagclub.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#BFFF00",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}

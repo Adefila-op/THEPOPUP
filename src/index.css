@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 75 100% 50%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 75 100% 50%;
+    --accent-foreground: 0 0% 4%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 75 100% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 6%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 75 100% 50%;
+    --sidebar-primary-foreground: 0 0% 4%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 75 100% 50%;
+
+    /* Custom tokens */
+    --glow: 75 100% 50%;
+    --surface: 0 0% 9%;
+    --surface-hover: 0 0% 12%;
+    --success: 142 76% 46%;
+    --warning: 38 92% 50%;
+  }
+}
+
+/* Light theme overrides (white background, blue primary buttons) */
+html.light {
+  --background: 0 0% 100%;
+  --foreground: 215 16% 12%;
+
+  --card: 210 20% 98%;
+  --card-foreground: 215 16% 12%;
+
+  --popover: 210 20% 98%;
+  --popover-foreground: 215 16% 12%;
+
+  --primary: 214 90% 50%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 210 20% 98%;
+  --secondary-foreground: 215 16% 12%;
+
+  --muted: 210 30% 96%;
+  --muted-foreground: 215 12% 46%;
+
+  --accent: 214 90% 50%;
+  --accent-foreground: 0 0% 100%;
+
+  --border: 210 16% 90%;
+  --input: 210 16% 90%;
+  --ring: 214 90% 50%;
+
+  --glow: 214 90% 50%;
+  --surface: 210 20% 98%;
+  --surface-hover: 210 20% 95%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 20px hsl(75 100% 50% / 0.4), 0 0 60px hsl(75 100% 50% / 0.15);
+  }
+
+  .border-glow {
+    box-shadow: 0 0 15px hsl(75 100% 50% / 0.15), inset 0 0 15px hsl(75 100% 50% / 0.05);
+  }
+
+  .glass {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+
+  .glass-hover {
+    @apply hover:bg-card/80 hover:border-primary/20 transition-all duration-300;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-[hsl(90,100%,65%)];
+  }
+
+  .neon-border {
+    border: 1px solid hsl(75 100% 50% / 0.3);
+    box-shadow: 0 0 10px hsl(75 100% 50% / 0.1);
+  }
+
+  /* Safe area support for iPhone notch and home indicator */
+  .safe-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .safe-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+
+  .safe-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
