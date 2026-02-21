@@ -1,73 +1,105 @@
-# Welcome to your Lovable project
+# The POP Up — Physical Art. Onchain Ownership.
 
-## Project info
+A Farcaster miniapp built on Base that empowers creators to launch exclusive physical art drops with tokenized ownership and resale rights.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- **Creator Marketplace** - Browse and subscribe to creators
+- **Exclusive Drops** - Access limited-edition physical art launches
+- **Wallet Integration** - Connect via Farcaster or Coinbase Wallet
+- **Onchain Campaigns** - Participate in tokenized campaigns for drops
+- **Resale Rights** - Earn resale royalties through campaigns on Base
+- **Share to Farcaster** - Share drops and campaigns directly to Farcaster casts
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend**: React + TypeScript + Vite
+- **Styling**: Tailwind CSS + shadcn-ui
+- **Wallet**: Wagmi + Coinbase OnchainKit
+- **Blockchain**: Base (Optimism L2)
+- **Farcaster**: @farcaster/miniapp-sdk + frame-wagmi-connector
+- **Routing**: React Router
+- **State**: Zustand
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+ and npm
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to the project directory
+cd drop-and-claim-baseapp
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install --legacy-peer-deps
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Development
 
-**Use GitHub Codespaces**
+```sh
+# Build for production
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Run tests
+npm run test
 
-## What technologies are used for this project?
+# Lint code
+npm run lint
+```
 
-This project is built with:
+## Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Deploy to Vercel
 
-## How can I deploy this project?
+```sh
+npm run build
+vercel --prod
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+The app is configured to deploy on Vercel with proper SPA routing.
 
-## Can I connect a custom domain to my Lovable project?
+**Live URL**: https://the-popup.vercel.app
 
-Yes, you can!
+## Project Structure
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```
+src/
+├── components/        # React components (UI, providers, wallet)
+├── pages/            # Page components (Drops, Creators, Dashboard, etc.)
+├── hooks/            # Custom hooks (useMiniKit, useWalletAction, etc.)
+├── lib/              # Utilities and configs (wagmi, mockData, utils)
+├── assets/           # Images and static assets
+├── App.tsx           # Main app component
+├── main.tsx          # React entry point
+└── index.css         # Global styles with Tailwind
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## Configuration
+
+- **Wagmi Config**: [src/lib/wagmi.ts](src/lib/wagmi.ts) - Wallet connectors and chains
+- **Farcaster Manifest**: [public/.well-known/farcaster.json](public/.well-known/farcaster.json)
+- **Build Config**: [vite.config.ts](vite.config.ts)
+- **Deployment Config**: [vercel.json](vercel.json)
+
+## Environment Variables
+
+Create a `.env.local` file with:
+
+```
+VITE_ONCHAINKIT_API_KEY=your_api_key_here
+```
+
+## License
+
+Proprietary - All rights reserved

@@ -16,23 +16,6 @@ import { MiniKitProvider } from "./components/MiniKitProvider.tsx";
   }
 })();
 
-// Initialize theme: default is dark (existing design). If the user has a stored
-// preference of 'light' we enable the light theme by adding `html.light`.
-(function initTheme() {
-  try {
-    const stored = localStorage.getItem('theme');
-    if (stored === 'light') {
-      document.documentElement.classList.add('light');
-    } else if (stored === 'dark') {
-      document.documentElement.classList.remove('light');
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      document.documentElement.classList.add('light');
-    }
-  } catch (e) {
-    // ignore if storage not available
-  }
-})();
-
 createRoot(document.getElementById("root")!).render(
   <MiniKitProvider>
     <App />

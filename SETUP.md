@@ -32,14 +32,14 @@ Push to your repo and deploy (Vercel recommended). Make sure **Vercel Authentica
 
 ```bash
 # Verify the manifest is accessible:
-curl https://drop-and-claim.lovable.app/.well-known/farcaster.json
+curl https://the-popup.vercel.app/.well-known/farcaster.json
 ```
 
 ### Step 3: Sign Your Manifest (Critical!)
 The `accountAssociation` block in `public/.well-known/farcaster.json` must be signed by your Farcaster account.
 
 1. Go to **https://www.base.dev/preview?tab=account**
-2. Paste your domain: `drop-and-claim.lovable.app`
+2. Paste your domain: `the-popup.vercel.app`
 3. Click **Submit**, then **Verify**
 4. Sign the message with your Farcaster wallet
 5. Copy the generated `accountAssociation` JSON
@@ -71,7 +71,7 @@ Go to **https://base.dev/preview**, enter your URL, and check:
 ### Step 6: Publish
 To make the app discoverable in the Base App, create a post in the Base App with your app URL:
 ```
-https://drop-and-claim.lovable.app
+https://the-popup.vercel.app
 ```
 
 ---
@@ -101,7 +101,7 @@ const MyComponent = () => {
   return (
     <div>
       {isInMiniApp && user && <p>Welcome, {user.displayName}!</p>}
-      <button onClick={() => shareUrl("https://drop-and-claim.lovable.app/drops/1", "Check out this drop!")}>
+      <button onClick={() => shareUrl("https://the-popup.vercel.app/drops/1", "Check out this drop!")}>
         Share Drop
       </button>
     </div>

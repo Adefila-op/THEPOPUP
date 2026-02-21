@@ -72,7 +72,7 @@ const Index = () => {
               </Link>
               <ShareButton
                 text="Physical Art. Onchain Ownership. Check out The POP Up on Base 🔥"
-                url="https://drop-and-claim.lovable.app"
+                url="https://the-popup.vercel.app"
                 label="Share"
                 className="text-primary border-primary/20"
               />
