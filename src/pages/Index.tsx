@@ -1,13 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Zap, Shield, Repeat } from "lucide-react";
+import { ArrowRight, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 import ShareButton from "@/components/ShareButton";
-import DropCard from "@/components/DropCard";
-import CreatorCard from "@/components/CreatorCard";
 import Layout from "@/components/Layout";
-import { mockDrops, mockCreators } from "@/lib/mockData";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -96,48 +93,7 @@ const Index = () => {
 
 
 
-      {/* How It Works */}
-      <section className="py-20 border-t border-border/30">
-        <div className="container mx-auto px-4">
-          <h2 className="font-display text-3xl md:text-4xl font-extrabold text-center mb-16">
-            How It Works
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: <Zap className="w-6 h-6" />,
-                title: "Subscribe",
-                desc: "Mint a subscription NFT to unlock early access, discounted pricing, and loyalty rewards.",
-              },
-              {
-                icon: <Shield className="w-6 h-6" />,
-                title: "Collect",
-                desc: "Claim physical art drops. Each purchase mints an ownership NFT with IPFS metadata.",
-              },
-              {
-                icon: <Repeat className="w-6 h-6" />,
-                title: "Earn & Resell",
-                desc: "Join campaigns to earn allocation NFTs. Resell with built-in royalties for creators.",
-              },
-            ].map((item, i) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.15 }}
-                className="text-center p-8 rounded-xl bg-card border border-border/50"
-              >
-                <div className="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
-                  {item.icon}
-                </div>
-                <h3 className="font-display text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
 
 
