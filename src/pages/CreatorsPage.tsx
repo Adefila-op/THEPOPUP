@@ -53,6 +53,19 @@ const CreatorsPage = () => {
             <FeaturedCreator key={creator.id} creator={creator} />
           ))}
 
+          {/* Co-Create CTA */}
+          <div className="mb-8 p-6 rounded-xl bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-200">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="font-display font-bold text-lg mb-2">💡 Want to collaborate?</h3>
+                <p className="text-sm text-muted-foreground">Physical artists can partner with digital creators to make limited-edition drops</p>
+              </div>
+              <a href="/cocreate" className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium whitespace-nowrap ml-4">
+                Co-Create
+              </a>
+            </div>
+          </div>
+
           {/* All creators grid */}
           {filtered.length === 0 ? (
             <div className="text-center py-16 text-sm text-muted-foreground">

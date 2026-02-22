@@ -94,37 +94,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Drops */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <h2 className="font-display text-3xl md:text-4xl font-extrabold">
-                Featured Drops
-              </h2>
-              <p className="text-muted-foreground mt-2">Limited physical art with onchain proof</p>
-            </div>
-            <Link to="/drops">
-              <Button variant="ghost" size="sm">
-                View All <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
-            {mockDrops.map((drop, i) => (
-              <motion.div
-                key={drop.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <DropCard drop={drop} />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* How It Works */}
       <section className="py-20 border-t border-border/30">
@@ -169,33 +139,49 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Top Creators */}
-      <section className="py-20 border-t border-border/30">
+
+
+      {/* Co-Create Banner */}
+      <section className="py-20 border-t border-border/30 bg-gradient-to-r from-blue-50/50 to-purple-50/50">
         <div className="container mx-auto px-4">
-          <div className="flex items-end justify-between mb-10">
-            <div>
-              <h2 className="font-display text-3xl md:text-4xl font-extrabold">Top Creators</h2>
-              <p className="text-muted-foreground mt-2">Subscribe and get exclusive access</p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-widest mb-4">
+              <Zap className="w-3 h-3" />
+              Collaborate & Earn
             </div>
-            <Link to="/creators">
-              <Button variant="ghost" size="sm">
-                View All <ArrowRight className="w-4 h-4" />
+            <h2 className="font-display text-3xl md:text-4xl font-extrabold mb-4">
+              Co-Create Limited Drops
+            </h2>
+            <p className="text-muted-foreground text-lg mb-8">
+              Physical artists + Digital creators = Limited-edition magic. Collaborate on exclusive drops, lock royalties forever, and mint co-signed NFTs on Base.
+            </p>
+            <Link to="/cocreate">
+              <Button variant="hero" size="xl">
+                Start a Collaboration <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {mockCreators.map((creator, i) => (
-              <motion.div
-                key={creator.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-              >
-                <CreatorCard creator={creator} />
-              </motion.div>
-            ))}
-          </div>
+            <div className="mt-8 flex items-center justify-center gap-6 text-sm">
+              <div className="flex items-center gap-2">
+                <span className="text-lg">🎨</span>
+                <span className="text-muted-foreground">Physical Artists</span>
+              </div>
+              <div className="text-muted-foreground">+</div>
+              <div className="flex items-center gap-2">
+                <span className="text-lg">💻</span>
+                <span className="text-muted-foreground">Digital Creators</span>
+              </div>
+              <div className="text-muted-foreground">=</div>
+              <div className="flex items-center gap-2">
+                <span className="text-lg">🌟</span>
+                <span className="text-muted-foreground">Co-Signed Drops</span>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

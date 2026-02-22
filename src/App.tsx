@@ -13,6 +13,9 @@ import DropDetailPage from "./pages/DropDetailPage";
 import CampaignsPage from "./pages/CampaignsPage";
 import MarketplacePage from "./pages/MarketplacePage";
 import DashboardPage from "./pages/DashboardPage";
+import CoCreatePage from "./pages/CoCreatePage";
+import DigitalArtistPage from "./pages/DigitalArtistPage";
+import CollabWorkspacePage from "./pages/CollabWorkspacePage";
 
 const App = () => {
   const { setFrameReady, isFrameReady } = useMiniKit();
@@ -35,6 +38,9 @@ const App = () => {
           <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/marketplace" element={<MarketplacePage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/cocreate" element={<CoCreatePage />} />
+          <Route path="/cocreate/artist/:id" element={<DigitalArtistPage />} />
+          <Route path="/cocreate/:id" element={<CollabWorkspacePage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
